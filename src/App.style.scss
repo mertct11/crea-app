@@ -1,0 +1,23 @@
+html {
+  font-family: "Montserrat" !important;
+
+  input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    opacity: 1; /* Firefox */
+  }
+
+  input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  }
+
+  input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  }
+
+  button {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  }
+}

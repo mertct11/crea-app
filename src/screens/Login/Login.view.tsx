@@ -1,19 +1,38 @@
-import React from "react";
 import LoginLogic from "./Login.logic";
 import "./Login.style.scss";
+import { Input } from "@/components";
+import { GlobalLayout } from "@/layouts";
 const Login = () => {
-  const { handleClick } = LoginLogic();
+  const { handleClick, setUsername, setPassword, errorText } = LoginLogic();
 
   return (
-    <div className="login-container">
-      <h1
-        onClick={() => {
-          handleClick();
-        }}
-      >
-        asdThis is the Login page
-      </h1>
-    </div>
+    <GlobalLayout isBgGradient={true}>
+      <div className="login-page">
+        <div className="login-form">
+          <h2>Login</h2>
+          <Input
+            onChange={(val: string) => {
+              setUsername(val);
+            }}
+            placeholder="username"
+            type="text"
+          />
+          <Input
+            onChange={(val: string) => {
+              setPassword(val);
+            }}
+            placeholder="Password"
+            type="password"
+          />
+          {errorText !== "" && (
+            <label className="error-text">{errorText}</label>
+          )}
+          <button onClick={handleClick} type="submit">
+            Submit
+          </button>
+        </div>
+      </div>
+    </GlobalLayout>
   );
 };
 

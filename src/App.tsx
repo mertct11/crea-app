@@ -1,15 +1,14 @@
-import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Login, ProductList, ProductDetail } from "@/screens";
-
+import "./App.style.scss";
 const App = () => {
   return (
-    <div className="App">
+    <div className="app">
       <Routes>
-        <Route index path="/" element={<Navigate to="/login" />} />
+        <Route path="*" element={<Navigate to="/products" replace />} />
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<ProductList />} />
-        <Route path="/product-detail" element={<ProductDetail />} />
+        <Route path="/product-detail/:slug" element={<ProductDetail />} />
       </Routes>
     </div>
   );

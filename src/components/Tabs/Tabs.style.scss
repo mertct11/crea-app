@@ -1,0 +1,39 @@
+/* Tabs.scss */
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3%;
+}
+
+.tab {
+  padding: 10px 20px;
+  margin: 0 5px;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  background: #ddd6f3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #faaca8,
+    #ddd6f3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #faaca8, #ddd6f3);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+
+  &:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.choosen-tab{
+  border-bottom: 3px solid grey;
+}

@@ -1,18 +1,25 @@
 import React from "react";
 import ProductListLogic from "./ProductList.logic";
+import { GlobalLayout } from "@/layouts";
+import "./ProductList.style.scss";
+import { ProductCard } from "@/components";
 function ProductList() {
-  const { handleClick } = ProductListLogic();
+  const { productList, handleCardClick } = ProductListLogic();
 
   return (
-    <div>
-      <h1
-        onClick={() => {
-          handleClick();
-        }}
-      >
-        This is the ProductList page
-      </h1>
-    </div>
+    <GlobalLayout isBgGradient={false}>
+      <div className="product-list-page">
+        <h1>Product List</h1>
+        <div className="product-list">
+          {productList?.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={{ ...product, handleCardClick }}
+            />
+          ))}
+        </div>
+      </div>
+    </GlobalLayout>
   );
 }
 
