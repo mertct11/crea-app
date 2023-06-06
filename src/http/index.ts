@@ -37,10 +37,10 @@ export const fetcher = async ({ method, url, data }: IFetcherProps) => {
     }
     const response = await axios({ ...axiosPayload });
     return response;
-  } catch (error: any) {
-    console.log({ error });
+  } catch (error: any) { 
     if (
-      error.response.status === 401 ||
+      (error.response.status === 401 &&
+        window.location.pathname !== "/login") ||
       error.response.status === 403 ||
       error.response.status === 422
     ) {

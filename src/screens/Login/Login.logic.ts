@@ -20,7 +20,6 @@ const LoginLogic = () => {
         password: password,
       },
     });
-    console.log({ loginlogicici: response });
     if (response?.success) {
       localStorage.setItem("jwt", response?.token);
       navigate("/products");
